@@ -3,13 +3,15 @@
 class PagesController {
     public function about() {
         return [
-            'view' => 'pages/about'
+            'view' => 'views/pages/about.view.php',
+            'data' => []
         ];
     }
 
     public function contact() {
         return [
-            'view' => 'pages/contact'
+            'view' => 'views/pages/contact.view.php',
+            'data' => []
         ];
     }
 }

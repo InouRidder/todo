@@ -1,6 +1,7 @@
 <?php 
 
 require 'core/router.php';
+require 'core/request.php';
 
 $router = new Router;
 
@@ -10,14 +11,15 @@ $router->init([
     'contact' => 'pages/contact'
 ]);
 
-$route = trim(
-    $_SERVER['REQUEST_URI'], '/'
-);
+$route = Request::uri();
 
 $result = $router->direct($route);
 
+// Not sure how variable scope works yet or how to set the variables from a different closure and scope to global;
 foreach($result['data'] as $key => $value) {
     $$key = $value;
 }
 
-require $result['view'];
+$result['view'];
+
+require 'views/index.view.php';

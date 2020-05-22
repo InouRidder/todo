@@ -8,8 +8,9 @@ class TodosController {
         $data = [ 'todos' =>$todos ];
 
         return [
-            'view' => 'views/index.view.php',
+            'view' => 'views/todos/index.view.php',
             'data' => $data
         ];
     }
+    
 }
