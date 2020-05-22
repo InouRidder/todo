@@ -37,8 +37,3 @@ class Repository {
     }    
 }
 
-$config = require 'config.php';
-$db_config = $config['database'];
-
-$repo = new Repository($db_config);
-$todos = $repo->fetchAll();

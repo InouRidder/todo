@@ -5,10 +5,19 @@ require 'core/router.php';
 $router = new Router;
 
 $router->init([
-    '' => 'views/index.view.php',
-    'about' => 'views/about.php'
+    '' => 'todos/index',
+    'about' => 'pages/about',
+    'contact' => 'pages/contact'
 ]);
 
-$view = $router->direct(trim($_SERVER['REQUEST_URI'], '/'));
+$route = trim(
+    $_SERVER['REQUEST_URI'], '/'
+);
 
-require $view;
+$result = $router->direct($route);
+
+foreach($result['data'] as $key => $value) {
+    $$key = $value;
+}
+
+require $result['view'];

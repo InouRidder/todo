@@ -1,13 +1,16 @@
 <?php
 
 class PagesController {
-    public function index() {
-
-        
-
+    public function about() {
         return [
-            'view' => 'views/index.php';
-            'data' => []
+            'view' => 'pages/about'
+        ];
+    }
+
+    public function contact() {
+        return [
+            'view' => 'pages/contact'
         ];
     }
 }
+
