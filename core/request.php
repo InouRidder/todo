@@ -6,4 +6,9 @@ class Request {
             $_SERVER['REQUEST_URI'], '/'
         );        
     }
+
+
+    static function method() : String {
+        return $_SERVER['REQUEST_METHOD'];
+    }
 }

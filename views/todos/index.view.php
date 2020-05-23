@@ -12,4 +12,9 @@
     <p>
         <?= $todo->description ?>
     </p>
+    <form action="todos/delete" method='POST'>
+            <input type="hidden" name='id' value='<?= $todo->id ?>'>
+            <input type="submit" value='Remove'>
+    </form>
+    
 <?php } ?>

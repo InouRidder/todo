@@ -1,15 +1,17 @@
 <?php 
 
 class Todo {    
+    public $id;
     public $title;
     public $description;
-    protected $completed;
+    public $completed;
 
     public function __construct($attr)
     {
+        $this->id = $attr['id'];
         $this->description = $attr['description'];
         $this->title = $attr['title'];
-        $this->completed = $attr['completed'] || false;
+        $this->completed = $attr['completed'] || 0;
     }
 
     public function isCompleted() 
